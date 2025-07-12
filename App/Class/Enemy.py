@@ -16,5 +16,8 @@ class Enemy:
     def attack(self):
         print(f"Enemy {self.get_type_of_enemy()} attack you with damage of {self.attack_damage}.")
 
+    def special_attach(self):
+        print(f"{self.get_type_of_enemy()} has no special attack")
+
     def get_type_of_enemy(self):
         return self.__type_of_enemy
