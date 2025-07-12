@@ -31,14 +31,13 @@ def battle(e1: Enemy, e2: Enemy):
 def hero_battle(hero: Hero, enemy: Enemy):
     print('--------------')
     enemy.special_attach()
-
     while hero.health_points > 0 and enemy.health_points > 0:
         print(f"Hero: has {enemy.health_points} HP left.")
         print(f"{enemy.get_type_of_enemy()}: has {enemy.health_points} HP left.")
-        hero.attack()
-        enemy.health_points -= hero.attack_damage
         enemy.attack()
         hero.health_points -= enemy.attack_damage
+        hero.attack()
+        enemy.health_points -= hero.attack_damage
         print('--------------')
 
 
@@ -48,20 +47,15 @@ def hero_battle(hero: Hero, enemy: Enemy):
         print(f"Hero wins!")
 
 
-zombie = Zombie()
-orge = Orge(100, 3)
-
-# battle(zombie, orge)
-
-hero = Hero(10, 2)
-
-weapon = Weapon('Sword', 100)
-
+zombie = Zombie(10,1)
+orge = Orge(20, 3)
+hero = Hero(10, 1)
+weapon = Weapon('Sword', 4)
 hero.weapon = weapon
-
 hero.equip_weapon()
 
 hero_battle(hero, orge)
+# battle(zombie, orge)
 # print (zombie.get_type_of_enemy())
 #
 # zombie.talk()
