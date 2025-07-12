@@ -1,5 +1,4 @@
 class Enemy:
-
     def __init__(self, type_of_enemy, health_points = 10, attack_damage = 1):
         self.__type_of_enemy = type_of_enemy
         self.health_points = health_points
